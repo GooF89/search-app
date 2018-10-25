@@ -1,4 +1,4 @@
-import {GET_ITEMS, ADD_ITEM, DELETE_ITEM, UPDATE_ITEM, ITEMS_LOADING} from "./types";
+import {GET_ITEMS, ADD_ITEM, ITEMS_LOADING} from "./types";
 import axios from 'axios';
 
 export const getItems = () => dispatch => {
@@ -13,37 +13,28 @@ export const getItems = () => dispatch => {
   )
 };
 
-export const addItem = item => dispatch => {
-  axios.post('/api/items', item).then(res =>
-    dispatch({
-      type: ADD_ITEM,
-      payload : {
-        item: res.data
-      }
-    })
-  )
-};
+export const addItem = name => dispatch => {
 
-export const updateItem = payload => dispatch => {
-  axios.put('/api/items/update', payload ).then(res =>
-    dispatch({
-      type: UPDATE_ITEM,
-      payload : {
-        item: res.data
-      }
-    })
-  )
-};
+  const baseUrl = "https://itunes.apple.com/search?";
+  const query = name.replace(/\s+/g,"+");
+  const term = `term=${query}`;
+  const entity = "&entity=musicVideo";
+  const url = baseUrl + term + entity;
 
-export const deleteItem = id => dispatch => {
-  axios.delete(`/api/items/${id}`).then(res =>
-    dispatch({
-      type: DELETE_ITEM,
-      payload : {
-        id
-      }
-    })
-  )
+  axios.get(url)
+    .then(results => {
+      axios.post('/api/items', { name })
+        .then(res =>{
+          console.log(results.data);
+          dispatch({
+            type: ADD_ITEM,
+            payload : {
+              results: results.data.results
+            }
+          })}
+        )
+    });
+
 };
 
 export const setItemsLoading = () => {

@@ -1,7 +1,10 @@
-import {GET_ITEMS, ADD_ITEM, DELETE_ITEM, UPDATE_ITEM, ITEMS_LOADING} from "../actions/types";
+import {GET_ITEMS, ADD_ITEM, ITEMS_LOADING} from "../actions/types";
 
 const initialState = {
-  items: [],
+  searchItems: [],
+  showSearched: false,
+  resultItems: [],
+  showResults: false,
   loading: false
 };
 
@@ -10,23 +13,17 @@ export default function (state = initialState, action) {
     case GET_ITEMS:
       return {
         ...state,
-        items: action.payload.items,
+        searchItems: action.payload.items,
+        showSearched: true,
+        showResults: false,
         loading: false
       };
     case ADD_ITEM:
       return {
         ...state,
-        items: [action.payload.item, ...state.items]
-      };
-    case UPDATE_ITEM:
-      return {
-        ...state,
-        items: state.items.map( item => {return item._id === action.payload.item._id ? action.payload.item : item})
-      };
-    case DELETE_ITEM:
-      return {
-        ...state,
-        items: state.items.filter( item => item._id !== action.payload.id)
+        resultItems: action.payload.results,
+        showSearched: false,
+        showResults: true,
       };
     case ITEMS_LOADING:
       return {
