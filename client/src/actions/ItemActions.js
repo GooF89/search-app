@@ -21,11 +21,8 @@ export const addItem = name => dispatch => {
   const entity = "&entity=musicVideo";
   const url = baseUrl + term + entity;
 
-  axios.get(url, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    }
-  }).then(results => {
+  axios.get(url, { crossdomain: true })
+    .then(results => {
       axios.post('/api/items', { name })
         .then(res =>{
           dispatch({
