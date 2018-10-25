@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 
 const items = require('./routes/api/items');
 
@@ -9,14 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.all('*', function(req, res, next) {
-     let origin = req.get('origin');
-     res.header('Access-Control-Allow-Origin', origin);
-     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-     res.header('Access-Control-Allow-Headers', 'Content-Type');
-     next();
-});
-
+app.use(cors());
 
 // DB Config
 const db = require('./config/keys').mongoURI;
