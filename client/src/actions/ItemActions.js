@@ -15,13 +15,14 @@ export const getItems = () => dispatch => {
 
 export const addItem = name => dispatch => {
 
+  const anyWhere = `${'https://cors-anywhere.herokuapp.com/'}`;
   const baseUrl = "https://itunes.apple.com/search?";
   const query = name.replace(/\s+/g,"+");
   const term = `term=${query}`;
   const entity = "&entity=musicVideo";
-  const url = baseUrl + term + entity;
+  const url = anyWhere + baseUrl + term + entity;
 
-  axios.get(url, { crossdomain: true })
+  axios.get(url)
     .then(results => {
       axios.post('/api/items', { name })
         .then(res =>{
