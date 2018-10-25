@@ -19,6 +19,8 @@ class App extends Component {
           <AppNavbar />
           <Container>
             <ResultList />
+          </Container>
+          <Container>
             <MSList />
           </Container>
         </div>

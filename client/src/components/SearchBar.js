@@ -19,10 +19,16 @@ class SearchBar extends Component {
     this.setState({ name: "" });
   };
 
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.onClick();
+    }
+  };
+
   render() {
     return (
       <InputGroup>
-        <Input type="text" name="name" placeholder="Search..." onChange={this.onChange} value={this.state.name} />
+        <Input type="text" name="name" placeholder="Search..." onKeyPress={this.handleKeyPress} onChange={this.onChange} value={this.state.name} />
         <Button color="dark" onClick={this.onClick}>
           <FaSearch />
         </Button>

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   ListGroupItem,
-  Media
+  Media,
+  Input
 } from 'reactstrap';
 
 
@@ -11,13 +12,13 @@ class ResultItem extends Component {
 
     const item = this.props.item;
     return (
-      <ListGroupItem tag="a" href={item.trackViewUrl} color="secondary" >
+      <ListGroupItem tag="a" href={item.trackViewUrl} color="secondary"  >
         <Media>
-          <Media left middle>
-            <img alt={item.trackName} src={item.artworkUrl60} width="30" height="30"/>
+          <Media left>
+            <img alt={item.trackName} src={item.artworkUrl60} />
           </Media>
-          <Media body>
-            <Media heading middle>
+          <Media body style={{marginLeft: 40}}>
+            <Media heading >
               {item.trackName}
             </Media>
            </Media>
