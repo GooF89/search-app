@@ -14,10 +14,10 @@ class ResultItem extends Component {
       <ListGroupItem tag="a" href={item.trackViewUrl} color="secondary" >
         <Media>
           <Media left middle>
-            <img src={item.artworkUrl60} width="30" height="30"/>
+            <img alt={item.trackName} src={item.artworkUrl60} width="30" height="30"/>
           </Media>
           <Media body>
-            <Media heading middle center>
+            <Media heading middle>
               {item.trackName}
             </Media>
            </Media>

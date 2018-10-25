@@ -45,7 +45,7 @@ class AppNavbar extends Component {
                   <MSButton />
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/GooF89">github</NavLink>
+                  <NavLink href="https://github.com/GooF89/search-app">github</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

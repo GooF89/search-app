@@ -25,7 +25,6 @@ export const addItem = name => dispatch => {
     .then(results => {
       axios.post('/api/items', { name })
         .then(res =>{
-          console.log(results.data);
           dispatch({
             type: ADD_ITEM,
             payload : {
