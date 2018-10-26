@@ -29,7 +29,8 @@ export const addItem = name => dispatch => {
           dispatch({
             type: ADD_ITEM,
             payload : {
-              results: results.data.results
+              results: results.data.results,
+              lastSearch: name
             }
           })}
         )

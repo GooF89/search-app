@@ -5,6 +5,7 @@ const initialState = {
   showSearched: false,
   resultItems: [],
   showResults: false,
+  lastSearch: '',
   loading: false
 };
 
@@ -22,6 +23,7 @@ export default function (state = initialState, action) {
         ...state,
         resultItems: action.payload.results,
         showResults: true,
+        lastSearch: action.payload.lastSearch,
         loading: false
       };
     case ITEMS_LOADING:

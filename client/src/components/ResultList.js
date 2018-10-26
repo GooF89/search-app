@@ -8,10 +8,14 @@ class ResultList extends Component {
   render() {
     const show = this.props.show;
     const resultItems = this.props.resultItems;
+    const lastSearch = this.props.lastSearch;
     return (
       <Container style={{width: '60%'}}>
         { show &&
         <Container >
+          <h2 style={{marginBottom: '5%', marginLeft: '16%'}}>
+            { resultItems.length ? `Results for "${lastSearch}":` : `No results for "${lastSearch}":`}
+          </h2>
           <ListGroup>
             {resultItems.map((item) =>{
               return (
@@ -27,7 +31,8 @@ class ResultList extends Component {
 
 const mapStateToProps = (state) => ({
   resultItems: state.store.resultItems,
-  show: state.store.showResults
+  show: state.store.showResults,
+  lastSearch: state.store.lastSearch
 });
 
 export default connect(
