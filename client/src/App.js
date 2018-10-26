@@ -4,11 +4,13 @@ import store from './store';
 import {Container} from 'reactstrap';
 import './App.css';
 
+import Loader from "./components/Loader";
 import AppNavbar from './components/AppNavbar';
 import ResultList from './components/ResultList';
 import MSList from './components/MostSearchedList';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 class App extends Component {
@@ -18,9 +20,8 @@ class App extends Component {
         <div>
           <AppNavbar />
           <Container>
+            <Loader />
             <ResultList />
-          </Container>
-          <Container>
             <MSList />
           </Container>
         </div>

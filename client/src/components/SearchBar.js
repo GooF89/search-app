@@ -15,8 +15,10 @@ class SearchBar extends Component {
   };
 
   onClick = () => {
-    this.props.addItem(this.state.name);
-    this.setState({ name: "" });
+    if (this.state.name !== '') {
+      this.props.addItem(this.state.name);
+      this.setState({ name: '' });
+    }
   };
 
   handleKeyPress = (e) => {

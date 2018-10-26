@@ -15,19 +15,20 @@ export default function (state = initialState, action) {
         ...state,
         searchItems: action.payload.items,
         showSearched: true,
-        showResults: false,
         loading: false
       };
     case ADD_ITEM:
       return {
         ...state,
         resultItems: action.payload.results,
-        showSearched: false,
         showResults: true,
+        loading: false
       };
     case ITEMS_LOADING:
       return {
         ...state,
+        showSearched: false,
+        showResults: false,
         loading: true
       };
     default:
