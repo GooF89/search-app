@@ -10,7 +10,7 @@ class ResultList extends Component {
     const resultItems = this.props.resultItems;
     const lastSearch = this.props.lastSearch;
     return (
-      <Container style={{width: '60%'}}>
+      <Container style={{maxWidth: '98%', width: 700}}>
         { show &&
         <Container >
           <h2 style={{marginBottom: '5%', marginLeft: '16%'}}>

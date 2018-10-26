@@ -14,7 +14,7 @@ class Loader extends Component {
   render() {
     const Loader = loaders[Math.floor(Math.random() * 4)];
     return (
-      <Container style={{width: 250}}>
+      <Container style={{width: 250, maxWidth: '50%'}}>
         <Loader
           sizeUnit={"px"}
           size={200}

@@ -16,7 +16,7 @@ class ResultItem extends Component {
           <Media left>
             <img alt={item.trackName} src={item.artworkUrl60} />
           </Media>
-          <Media body style={{marginLeft: 40}}>
+          <Media body style={{marginLeft: '5%'}}>
             <Media heading >
               {item.trackName}
             </Media>
