@@ -11,10 +11,10 @@ class MSList extends Component {
     const show = this.props.show;
     const searchItems = this.props.searchItems;
     return (
-      <Container style={{width: 300}}>
+      <Container style={{width: '45%'}}>
         { show &&
         <Container >
-          <h3>Most Searched List</h3>
+          <h3 style={{marginLeft: '15%'}}>Most Searched List</h3>
           <ListGroup>
             {searchItems.map((item) =>{
               return (

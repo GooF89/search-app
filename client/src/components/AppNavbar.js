@@ -29,7 +29,7 @@ class AppNavbar extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{marginBottom: '5%'}}>
         <Navbar color="dark" dark expand="md" className="mb-5">
           <Container>
             <NavbarBrand href=".">SearchApp</NavbarBrand>

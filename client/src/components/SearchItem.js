@@ -15,11 +15,10 @@ class SearchItem extends Component {
   };
 
   render() {
-    const width = 240;
     const item = this.props.item;
     return (
-      <ListGroupItem action color="dark" style={{width: width, position: "relative"}} onClick={this.onClick}>
-        <div style={{maxWidth: width - 30}}> {item.name} </div>
+      <ListGroupItem action color="dark" style={{ position: "relative"}} onClick={this.onClick}>
+        <div style={{width: '90%'}}> {item.name} </div>
         <span style={{position: "absolute", right: 5, top: 12}}>
           <Badge color="secondary">{item.counter}</Badge>
         </span>

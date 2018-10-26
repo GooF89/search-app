@@ -9,7 +9,7 @@ class ResultList extends Component {
     const show = this.props.show;
     const resultItems = this.props.resultItems;
     return (
-      <Container style={{width: 600}}>
+      <Container style={{width: '60%'}}>
         { show &&
         <Container >
           <ListGroup>
