@@ -5,21 +5,18 @@ import {Container} from 'reactstrap';
 import './App.css';
 
 import Loader from "./components/Loader";
-import AppNavbar from './components/AppNavbar';
 import ResultList from './components/ResultList';
 import MSList from './components/MostSearchedList';
-
+import SearchBar from "./components/SearchBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 class App extends Component {
   render() {
     return (
       <Provider store ={store}>
         <div>
-          <AppNavbar />
           <Container>
+            <SearchBar />
             <Loader />
             <ResultList />
             <MSList />

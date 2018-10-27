@@ -11,7 +11,7 @@ class ResultItem extends Component {
 
     const item = this.props.item;
     return (
-      <ListGroupItem tag="a" href={item.trackViewUrl} color="secondary"  >
+      <ListGroupItem tag="a" href={"/contents/" + item.trackId} color="secondary"  >
         <Media>
           <Media left>
             <img alt={item.trackName} src={item.artworkUrl60} />

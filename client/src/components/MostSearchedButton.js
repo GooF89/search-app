@@ -11,7 +11,7 @@ class MSButton extends Component {
 
   render() {
     return (
-      <Button color="dark" onClick={this.onClick}>
+      <Button style={{marginLeft: '7%'}} color="dark" onClick={this.onClick}>
         Most Searched
       </Button>
     )

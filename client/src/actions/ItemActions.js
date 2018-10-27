@@ -15,11 +15,11 @@ export const getItems = () => dispatch => {
 
 export const addItem = name => dispatch => {
 
-  //const anyWhere = `${'https://cors-anywhere.herokuapp.com/'}`;
   const baseUrl = "https://itunes.apple.com/search?";
   const query = name.replace(/\s+/g,"+");
   const term = `term=${query}`;
-  const url = baseUrl + term;
+  const media = '&media=musicVideo';
+  const url = baseUrl + term + media;
 
   dispatch(setItemsLoading());
   axios.get(url)

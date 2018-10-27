@@ -7,11 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container,
-  InputGroup
+  Container
 } from 'reactstrap';
-import SearchBar from "./SearchBar";
-import MSButton from "./MostSearchedButton";
 
 
 
@@ -29,21 +26,13 @@ class AppNavbar extends Component {
 
   render() {
     return (
-      <div style={{marginBottom: '5%'}}>
+      <div style={{marginBottom: '2%'}}>
         <Navbar color="dark" dark expand="md" className="mb-5">
           <Container>
-            <NavbarBrand href=".">SearchApp</NavbarBrand>
+            <NavbarBrand href="/">SearchApp</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <InputGroup>
-                    <SearchBar />
-                  </InputGroup>
-                </NavItem>
-                <NavItem>
-                  <MSButton />
-                </NavItem>
                 <NavItem>
                   <NavLink href="https://github.com/GooF89/search-app">github</NavLink>
                 </NavItem>
