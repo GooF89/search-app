@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import { Container } from 'reactstrap';
 import axios from 'axios';
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
+import Details from "./Details";
 
 class Content extends Component {
 
@@ -22,9 +24,30 @@ class Content extends Component {
   render() {
     const item = this.state.item;
     return (
-      <Container>
-        <h1> Here I am!!! </h1>
-      </Container>
+      <div style={{
+      }}>
+        <div style={{
+          float: 'left',
+          width: '45%',
+          padding: 5,
+          height: 300
+        }}>
+          <h1>{item.trackName}</h1>
+          <h3>Video's details:</h3>
+          <Details item={item}/>
+        </div>
+        <div style={{
+          float: 'left',
+          width: '45%',
+          padding: 5,
+          height: 300
+        }}>
+          <Player
+            src={item.previewUrl}
+          />
+        </div>
+      </div>
+
     )
   }
 }

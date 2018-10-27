@@ -14,7 +14,7 @@ class ResultItem extends Component {
       <ListGroupItem tag="a" href={"/contents/" + item.trackId} color="secondary"  >
         <Media>
           <Media left>
-            <img alt={item.trackName} src={item.artworkUrl60} />
+            <Media src={item.artworkUrl60} alt={item.trackName} />
           </Media>
           <Media body style={{marginLeft: '5%'}}>
             <Media heading >

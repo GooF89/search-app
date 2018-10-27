@@ -32,7 +32,10 @@ class SearchBar extends Component {
     return (
       <Container style={{maxWidth: '98%', width: 700, marginBottom: '2%'}}>
         <InputGroup >
-          <Input style={{border: 'solid'}} type="text" name="name" placeholder="Search..." onKeyPress={this.handleKeyPress} onChange={this.onChange} value={this.state.name} />
+          <Input style={{border: 'solid'}} type="text" name="name"
+                 placeholder="Search for content within the iTunes Store"
+                 onKeyPress={this.handleKeyPress} onChange={this.onChange}
+                 value={this.state.name} />
           <InputGroupAddon addonType="append">
             <Button color="dark" onClick={this.onClick}>
               <span style={{marginRight: '10%'}}>Find</span>
