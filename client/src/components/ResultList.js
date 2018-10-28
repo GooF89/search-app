@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Container, ListGroup,  } from 'reactstrap';
+import { Container, ListGroup } from 'reactstrap';
 import ResultItem from "./ResultItem";
 
 class ResultList extends Component {

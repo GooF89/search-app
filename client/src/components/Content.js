@@ -28,23 +28,23 @@ class Content extends Component {
       }}>
         <div style={{
           float: 'left',
-          width: '45%',
-          padding: 5,
-          height: 300
-        }}>
-          <h1>{item.trackName}</h1>
-          <h3>Video's details:</h3>
-          <Details item={item}/>
-        </div>
-        <div style={{
-          float: 'left',
-          width: '45%',
+          width: '50%',
           padding: 5,
           height: 300
         }}>
           <Player
             src={item.previewUrl}
           />
+        </div>
+        <div style={{
+          float: 'left',
+          width: '45%',
+          padding: 10,
+          height: 300
+        }}>
+          <h1>{item.trackName}</h1>
+          <h3>Video's details:</h3>
+          <Details item={item}/>
         </div>
       </div>
 
