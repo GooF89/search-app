@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 
-const mainDetails = ['artistName','releaseDate', 'country', 'primaryGenreName ' ];
+const mainDetails = ['artistName','releaseDate', 'country', 'primaryGenreName' ];
 
 const detail = (key, value) => {
-  if (key !== 'trackName') {
-    return (
-      <li>
-        {key} : {value}
-      </li>
-    )
-  }
+  return (
+    <li>
+      {key} : {value}
+    </li>
+  )
 };
 
 class Details extends Component {
