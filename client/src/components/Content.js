@@ -43,7 +43,7 @@ class Content extends Component {
           height: 300
         }}>
           <h1>{item.trackName}</h1>
-          <h3>Video's details:</h3>
+          <h4>Video's details:</h4>
           <Details item={item}/>
         </div>
       </div>
