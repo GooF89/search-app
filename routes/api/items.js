@@ -18,16 +18,8 @@ router.get('/', (req, res) =>{
 // @desc    Create an Item
 // @access  Public
 router.post('/', (req, res) =>{
-  Item.findOneAndDelete({name: req.body.name})
-    .then(result => (
-        new Item({
-          name: req.body.name,
-          counter: result ? result.counter + 1 : 1
-        })
-      ))
-    .then(newItem => {
-        newItem.save().then(result => res.json(result))
-    });
+  Item.findOneAndUpdate({name: req.body.name} , { $inc: { counter: 1 }}, {upsert: true})
+    .then(result => res.json(result))
 });
 
 module.exports = router;
